@@ -9,8 +9,20 @@ module.exports = {
           importSource: '@emotion/react',
         },
       },
-      '@emotion/babel-preset-css-prop',
     ],
   ],
-  plugins: ['@emotion/babel-plugin', 'babel-plugin-macros'],
+  plugins: [
+    '@emotion/babel-plugin',
+    'babel-plugin-macros',
+    'inline-react-svg',
+    [
+      'module-resolver',
+      {
+        alias: {
+          '@/components': './components',
+          '@/assets': './assets',
+        },
+      },
+    ],
+  ],
 };
